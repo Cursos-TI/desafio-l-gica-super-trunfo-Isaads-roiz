@@ -1,74 +1,133 @@
-# ⚠️ Importante!!!
-Você pode escolher qualquer um dos desafios para desenvolver. Sinta-se à vontade para começar pelo desafio que mais lhe interessa.
+#include <stdio.h>
 
-# Desafio Super Trunfo - Países - Comparação das Cartas
+int main() {
+char Carta1[20];
+char Carta2[20];
+char Estado1[20];
+char Estado2[20];
+char Cidade1[20];
+char Cidade2[20];
+int Populacao1;
+int Populacao2;
+float Area1;
+float Area2;
+float PIB1;
+float PIB2;
+int Turismo1;
+int Turismo2;
+float Densidade1;
+float Densidade2;
+float PerCapita1;
+float PerCapita2;
 
-Bem-vindo ao desafio "Super Trunfo - Países"! Neste projeto, você desenvolverá um sistema para comparar cartas baseadas em atributos de cidades. O desafio é dividido em três níveis: Novato, Aventureiro e Mestre. Cada nível adiciona novas funcionalidades e complexidades, permitindo um aprendizado progressivo.
+printf("Digite o Número da Primeira Carta: \n");
+scanf("%s", &Carta1);
 
-## 🏅 Nível Novato
+printf("Digite o nome do Primeiro Estado: \n");
+scanf("%s", &Estado1);
 
-No nível Novato, você começará implementando a lógica básica de comparação entre cartas utilizando estruturas de decisão `if` e `if-else`.
+printf("Digite o nome da Primeira Cidade: \n");
+scanf("%s", &Cidade1);
 
-### 🚩 Objetivos:
-- **Cadastro de Cartas:** O sistema permitirá ao usuário cadastrar cartas de cidades, incluindo informações como estado, código da carta, nome da cidade, população, área, PIB e número de pontos turísticos.
-- **Comparação de Cartas:** O sistema comparará os atributos de duas cartas e determinará a vencedora com base em uma propriedade específica (população, área, PIB, etc.), escolhida no código.
-- **Exibição de Resultados:** Após a comparação, o sistema exibirá qual carta venceu com base na regra: maior valor vence, exceto em densidade populacional, onde o menor valor é o vencedor.
+printf("Digite o Número de Habitantes da primeira cidade: \n");
+scanf("%d", &Populacao1);
 
-### 📥 Entrada de Dados:
-- Os dados das cartas serão inseridos manualmente via terminal.
-- O sistema solicitará interativamente as informações de cada carta.
+printf("Digite a Área (km) da primeira cidade: \n");
+scanf("%f", &Area1);
 
-### 📤 Saída de Dados:
-- Após o cadastro, as propriedades da cidade serão exibidas de forma organizada.
-- O resultado da comparação será mostrado, indicando a carta vencedora.
+printf("Digite o PIB da primeira cidade: \n");
+scanf("%f", &PIB1);
 
----
+printf("Digite a quantidade de Pontos Turisticos da primeira cidade: \n");
+scanf("%d", &Turismo1);
 
-## 🏅 Nível Aventureiro
+Densidade1 = (Populacao1 / Area1);
+PerCapita1 = (PIB1 / Populacao1);
 
-No nível Aventureiro, você expandirá o sistema para incluir a comparação aninhada e a criação de um menu interativo usando `switch`.
 
-### 🆕 Diferença em relação ao Nível Novato:
-- **Menu Interativo:** O usuário poderá escolher diferentes atributos para comparação através de um menu.
-- **Comparação Aninhada:** Implementação de lógica de comparação mais complexa, utilizando estruturas aninhadas para tomar decisões baseadas em múltiplos atributos.
+printf("Digite o Número da Carta do segundo Estado: \n");
+scanf("%s", &Carta2);
 
-### 🚩 Novas Funcionalidades:
-- **Cadastro de Cartas:** Similar ao nível Novato, com a adição de comparação de múltiplos atributos.
-- **Menu Interativo:** Uso de `switch` para criar um menu que permite ao jogador escolher os atributos a serem comparados.
-- **Exibição de Resultados:** O sistema exibirá o resultado da comparação, indicando qual carta venceu e qual atributo foi utilizado.
+printf("Digite o nome do Segundo Estado: \n");
+scanf("%s", &Estado2);
 
----
+printf("Digite o Nome da Segunda Cidade: \n");
+scanf("%s", &Cidade2);
 
-## 🏅 Nível Mestre
+printf("Digite o Número de Habitantes da segunda cidade: \n");
+scanf("%d", &Populacao2);
 
-No nível Mestre, o desafio se intensifica com a adição de funcionalidades avançadas, como menus dinâmicos e lógica de decisão complexa com operadores ternários.
+printf("Digite a Área (km) da segunda cidade: \n");
+scanf ("%f", &Area2);
 
-### 🆕 Diferença em relação ao Nível Aventureiro:
-- **Escolha de Dois Atributos:** O usuário poderá escolher dois atributos para comparação entre as cartas.
-- **Lógica de Decisão Complexa:** Implementação de estruturas de decisão aninhadas e encadeadas, além do uso de operadores ternários para determinar a carta vencedora.
-- **Menus Dinâmicos:** Os menus serão dinâmicos, permitindo uma navegação fluida entre as opções de comparação.
+printf("Digite o PIB da segunda cidade: \n");
+scanf("%f", &PIB2);
 
-### 🚩 Novas Funcionalidades:
-- **Comparação de Dois Atributos:** O sistema comparará dois atributos simultaneamente para determinar a carta vencedora.
-- **Lógica Avançada:** Uso de operadores ternários e lógica aninhada para lidar com comparações complexas.
-- **Empates:** O sistema será capaz de lidar com empates, exibindo mensagens apropriadas.
-- **Exibição de Resultados:** Exibição dos resultados das comparações de forma clara e interativa.
+printf("Digite a quantidade de Pontos Turisticos da segunda cidade: \n");
+scanf("%d", &Turismo2);
 
----
+Densidade2 = (Populacao2 / Area2);
+PerCapita2 = (PIB2 / Populacao2);
 
-## 📋 Requisitos Funcionais Comuns
-- **Cadastro de Cartas:** O sistema deve permitir o cadastro de cartas com as informações necessárias.
-- **Comparação:** O sistema deve comparar as cartas e determinar a vencedora com base nas regras estabelecidas.
-- **Exibição de Resultados:** Os resultados devem ser exibidos de forma clara, indicando a carta vencedora.
+if (Populacao1 > Populacao2) {
+    printf ("Carta nº 1 venceu com a maior quantidade Populacional!\n");
+} else {
+    printf ("Carta nº 2 venceu com a maior quantidade Populacional!\n");
+}
+if (Area1 > Area2) {
+    printf ("Carta nº 1 venceu com a maior Área apresentada!\n");
+} else {
+    printf ("Carta nº 2 venceu com a maior Área apresentada!\n");
+}
+if (PIB1 > PIB2) {
+    printf ("Carta nº 1 venceu com a maior porcentagem do PIB!\n");
+} else {
+    printf ("Carta nº 2 venceu com a maior porcentagem do PIB!\n");
+}
+if (Turismo1 > Turismo2) {
+    printf ("Carta nº 1 venceu com a maior captação do Turismo!\n");
+} else {
+    printf ("Carta nº 2 venceu com a maior captação do Turismo!\n);
+}
+if (Densidade1 < Densidade2) {
+    printf ("Carta nº 1 venceu com a menor Densidade Populacional!\n");
+} else {
+    printf ("Carta nº 2 venceu com a menor Densidade Populacional!\n");
+}
+if (PerCapita1 > PerCapita2) {
+   printf ("Carta nº 1 venceu com a maior Renda Per Capita!\n");
+} else {
+    printf ("Carta nº 2 venceu com a maior Renda Per Capita!\n");
+}
 
-## 📌 Requisitos Não Funcionais Comuns
-- **Usabilidade:** A interface do usuário deve ser simples e intuitiva.
-- **Performance:** O sistema deve executar operações sem atrasos perceptíveis.
-- **Manutenibilidade:** O código deve ser bem estruturado e documentado.
-- **Confiabilidade:** O sistema deve ser robusto e capaz de lidar com entradas inválidas de forma adequada.
+    
+    
+printf ("Carta: %s\n", Carta1);
+printf ("Nome do Estado: %s\n", Estado1);
+printf ("Nome da Cidade: %s\n", Cidade1);
+printf ("Populacao: %d\n", Populacao1);
+printf ("Area da cidade: %f\n", Area1);
+printf ("PIB: %f\n", PIB1);
+printf ("Turismo: %d\n", Turismo1);
+printf("Densidade Populacional: %.2f\n", Densidade1);
+printf("PIB per Capita: %.2f\n\n", PerCapita1);
 
----
 
-Boa sorte no desenvolvimento deste desafio e aproveite para aprender e se divertir enquanto progride pelos níveis!
 
-Equipe de Ensino - MateCheck
+printf ("Carta: %s\n", Carta2);
+printf ("Nome do Estado: %s\n", Estado2);
+printf ("Nome da cidade: %s\n", Cidade2);
+printf ("Populacao: %d\n", Populacao2);
+printf ("Area da cidade: %f\n", Area2);
+printf ("PIB: %f\n", PIB2);
+printf ("Turismo: %d\n", Turismo2);
+printf("Densidade Populacional: %.2f\n", Densidade2);
+printf("PIB per Capita: %.2f\n\n", PerCapita2);
+
+
+
+
+    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+
+    return 0;
+}
